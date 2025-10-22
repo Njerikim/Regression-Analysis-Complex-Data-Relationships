@@ -1,0 +1,117 @@
+Multiple Linear Regression using the Penguins Dataset
+
+This project demonstrates how to build, evaluate, and interpret a Multiple Linear Regression model using the Palmer Penguins dataset. The model explores how variables such as bill length, gender, and species affect the body mass of penguins.
+
+📦 Project Overview
+
+The goal of this project is to:
+
+Perform data cleaning and preprocessing on the penguins dataset.
+
+Split the dataset into training and testing sets.
+
+Build a multiple linear regression model using Ordinary Least Squares (OLS).
+
+Interpret the regression coefficients for meaningful insights.
+
+🧰 Technologies and Libraries Used
+
+Python 3.x
+
+Pandas – Data manipulation
+
+Seaborn – Dataset loading and visualization
+
+Scikit-learn – Train-test splitting
+
+Statsmodels – Regression modeling and statistical summary
+
+📊 Dataset
+
+The Palmer Penguins dataset is a built-in dataset from Seaborn.
+It contains physical measurements for three penguin species: Adelie, Chinstrap, and Gentoo.
+
+Variables used:
+
+body_mass_g – Dependent variable (target)
+
+bill_length_mm – Independent variable
+
+sex (renamed to gender) – Independent variable
+
+species – Independent variable
+
+🧹 Data Cleaning
+
+Subset the dataset to include only relevant columns.
+
+Rename columns for clarity.
+
+Drop rows with missing values.
+
+Reset the index for a clean dataset.
+
+penguins = penguins[["body_mass_g", "bill_length_mm", "sex", "species"]]
+penguins.columns = ["body_mass_g", "bill_length_mm", "gender", "species"]
+penguins.dropna(inplace=True)
+penguins.reset_index(drop=True, inplace=True)
+
+🧪 Model Construction
+
+The model uses the OLS (Ordinary Least Squares) method with the following formula:
+
+ols_formula = "body_mass_g ~ bill_length_mm + C(gender) + C(species)"
+
+
+This allows for:
+
+C(gender) – Encoded as categorical (reference: Female)
+
+C(species) – Encoded as categorical (reference: Adelie)
+
+🔍 Model Evaluation
+
+After fitting the model, we summarize and interpret the coefficients:
+
+1. Gender (C(gender)[T.Male])
+
+Males weigh approximately 528.95 grams more than females (reference group).
+
+2. Species
+
+Chinstrap penguins weigh about 285.39 grams less than Adelie penguins.
+
+Gentoo penguins weigh about 1,081.62 grams more than Adelie penguins.
+
+3. Bill length (mm)
+
+For each additional millimeter in bill length, the body mass increases by 35.55 grams, holding other factors constant.
+
+📈 Insights
+
+Gender and species have strong effects on penguin body mass.
+
+Bill length is a continuous predictor that also contributes positively to body mass.
+
+The model helps in understanding biological relationships and physical variations across species.
+
+🚀 How to Run
+
+Clone this repository:
+
+git clone https://github.com/yourusername/multiple-linear-regression-penguins.git
+cd multiple-linear-regression-penguins
+
+
+Install dependencies:
+
+pip install pandas seaborn scikit-learn statsmodels
+
+
+Run the script in a Jupyter notebook or Python environment.
+
+📚 References
+
+Seaborn Penguins Dataset Documentation
+
+Statsmodels OLS Documentation
