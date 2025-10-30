@@ -1,0 +1,139 @@
+🧮 Automatidata NYC Taxi Fare Prediction
+📘 Project Overview
+
+This project was completed as part of the Google Advanced Data Analytics Capstone course.
+The goal was to build and evaluate a multiple linear regression model to predict New York City taxi fares based on trip characteristics such as distance, duration, and passenger count.
+
+The project was conducted by Automatidata, a data consulting firm, in partnership with the NYC Taxi and Limousine Commission (TLC).
+The dataset used represents one year of NYC taxi trip data.
+
+🎯 Objectives
+
+Analyze and clean NYC taxi trip data.
+
+Identify and engineer relevant features influencing fare amounts.
+
+Build and evaluate a multiple linear regression model.
+
+Interpret model coefficients to provide actionable insights.
+
+Make data-driven recommendations to improve fare prediction accuracy.
+
+🧰 Tools and Technologies
+
+Python
+
+pandas, numpy — data manipulation and analysis
+
+matplotlib, seaborn — data visualization
+
+statsmodels, scikit-learn — regression modeling and evaluation
+
+Jupyter Notebook / VS Code — coding environment
+
+📊 Workflow
+1. Data Exploration
+
+Loaded and examined the dataset to understand its structure.
+
+Identified missing values, outliers, and invalid entries (e.g., negative fares or zero trip distances).
+
+2. Data Cleaning
+
+Removed invalid and duplicate records.
+
+Handled missing data through imputation and filtering.
+
+Created relevant subsets for modeling.
+
+3. Feature Engineering
+
+Created new variables such as trip duration and fare per mile.
+
+Encoded categorical variables like payment_type and passenger_count.
+
+Checked correlations between independent variables and fare amount.
+
+4. Modeling
+
+Built a Multiple Linear Regression model using statsmodels.OLS().
+
+Examined key statistics:
+
+Coefficients
+
+P-values
+
+R² and Adjusted R²
+
+Standard errors
+
+5. Model Evaluation
+
+Compared predicted vs. actual fares.
+
+Checked assumptions: linearity, multicollinearity, and normality of residuals.
+
+Calculated performance metrics such as RMSE, MAE, and R².
+
+📈 Results
+
+The final model achieved an R² score of ~0.84, indicating strong predictive performance.
+
+Key predictors of fare amount included:
+
+Trip distance (strongest positive correlation)
+
+Trip duration
+
+Time of day (peak vs. off-peak)
+
+💡 Insights & Recommendations
+
+Distance is the most significant determinant of fare cost.
+
+Including additional features such as weather or traffic conditions may further improve prediction accuracy.
+
+Deploying the model via an API can enable real-time fare predictions for drivers and customers.
+
+🗂️ Repository Structure
+Automatidata-Regression-Project/
+│
+├── data/
+│   ├── nyc_taxi_data.csv
+│   └── cleaned_data.csv
+│
+├── notebooks/
+│   └── regression_analysis.ipynb
+│
+├── src/
+│   └── utils.py
+│
+├── README.md
+└── requirements.txt
+
+⚙️ How to Run
+
+Clone this repository
+
+git clone https://github.com/<your-username>/Automatidata-Regression-Project.git
+cd Automatidata-Regression-Project
+
+
+Install dependencies
+
+pip install -r requirements.txt
+
+
+Open Jupyter Notebook
+
+jupyter notebook notebooks/regression_analysis.ipynb
+
+
+Run all cells to reproduce results.
+
+📚 References
+
+NYC Taxi & Limousine Commission (TLC) Data
+
+Google Advanced Data Analytics Capstone Project
